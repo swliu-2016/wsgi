@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#sudo -u swliu echo "Server Information:" > /mnt/btsync/PublicIP/ip.txt
+sudo -u swliu curl cip.cc
+#sudo -u swliu echo "Updated on" $(date) >> /mnt/btsync/PublicIP/ip.txt
+#sudo -u swliu unix2dos /mnt/btsync/PublicIP/ip.txt

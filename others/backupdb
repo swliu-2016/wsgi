@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+cur_time=`date +%Y-%m-%d_%T`
+cur_time=${cur_time//:/_}
+
+pg_dump webstat > "/mnt/btsync/ArchLinux/PostgreSQL-backup/webstat-$cur_time.dmp"
+gzip "/mnt/btsync/ArchLinux/PostgreSQL-backup/webstat-$cur_time.dmp"
+
+echo $cur_time
+# for restore
+# Step 1, the database should be create first by:
+#    createdb webstat
+# Step 2:
+#    psql webstat < /somewhere/webstat-xxxxx.dmp
